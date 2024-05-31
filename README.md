@@ -27,6 +27,8 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    - [x] Install and configure SQL Server BI tools.
    - [x] Install StarUML.
 
-2. Relational Database Modeling:
-   - [x] Define the relational data model to store transactions.
-   <img src="/Modelagam/ERDDiagram.png" width="400">
+2. Setup an OLTP environment:
+   - [x] Logical Modeling and Relationships.
+   - <div><img src="/Modelagam/ERDDiagram.png" width="400"></div>
+   - [ ] Fisical Modeling
+   
