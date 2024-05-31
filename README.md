@@ -20,11 +20,11 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
 
 ## Projects Steps
 1. Environment Setup
-   - Create a virtual machine.
-   - Install Windows Server 2022.
-   - Install and configure SQL Server BI tools.
-   - Install StarUML.
+   - [x] Create a virtual machine.
+   - [x] Install Windows Server 2022.
+   - [x] Install and configure SQL Server BI tools.
+   - [x] Install StarUML.
 
 2. Relational Database Modeling:
-   - Define the relational data model to store transactions.
-   - [Model](/Business-Intelligence-with-SQL-Server/blob/main/Modelagam/ERDDiagram.png)
+   - [x] Define the relational data model to store transactions.
+   <img src="/Modelagam/ERDDiagram.png" width="400">
