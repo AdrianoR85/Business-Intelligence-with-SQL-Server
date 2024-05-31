@@ -30,5 +30,5 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
 2. Setup an OLTP environment:
    - [x] Logical Modeling and Relationships.
    - <div><img src="/Modelagam/ERDDiagram.png" width="400"></div>
-   - [ ] Fisical Modeling
+   - [x] Fisical Modeling. [Link](https://github.com/AdrianoR85/Business-Intelligence-with-SQL-Server/blob/main/Modelagam/Modelagem_OLTP_Fisica.sql)
    
