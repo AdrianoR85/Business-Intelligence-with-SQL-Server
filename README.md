@@ -27,3 +27,4 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
 
 2. Relational Database Modeling:
    - Define the relational data model to store transactions.
+   - [Model](/Business-Intelligence-with-SQL-Server/blob/main/Modelagam/ERDDiagram.png)
