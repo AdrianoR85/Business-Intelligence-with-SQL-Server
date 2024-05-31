@@ -1,4 +1,6 @@
+[![Project Status](https://img.shields.io/badge/project_status-under_development-orange.svg)](https://shields.io)
 # Business-Intelligence-with-SQL-Server
+
 ## Project Description
 This repository documents the development of a complete Business Intelligence (BI) project for a fictitious retail store. The project covers the modeling of the relational database and 
 data warehouse, the construction of cubes in Analysis Services, and the generation of reports with Report Services.
