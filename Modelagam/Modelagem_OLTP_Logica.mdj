@@ -2483,8 +2483,7 @@
 							},
 							"name": "email",
 							"type": "VARCHAR",
-							"length": "60",
-							"unique": true
+							"length": "60"
 						},
 						{
 							"_type": "ERDColumn",
@@ -2492,7 +2491,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGPyzBVGKp9ND4="
 							},
-							"name": "genre",
+							"name": "gender",
 							"type": "CHAR",
 							"length": "1"
 						},
@@ -2700,7 +2699,7 @@
 							"_parent": {
 								"$ref": "AAAAAAGPyzLWraqcU8c="
 							},
-							"name": "genre",
+							"name": "gender",
 							"documentation": "M, F\n",
 							"type": "CHAR",
 							"length": "1"
