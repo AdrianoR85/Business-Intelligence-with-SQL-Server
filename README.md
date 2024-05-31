@@ -32,3 +32,4 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    - <div><img src="/Modelagam/ERDDiagram.png" width="400"></div>
    - [x] Fisical Modeling. [Link](https://github.com/AdrianoR85/Business-Intelligence-with-SQL-Server/blob/main/Modelagam/Modelagem_OLTP_Fisica.sql)
    
+3. OLTP Load
