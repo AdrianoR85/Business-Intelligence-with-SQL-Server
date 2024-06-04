@@ -1,0 +1,18 @@
+DECLARE
+	@ID_CLIENT INT, @ID_SELLER INT, @ID_METHOD INT,
+	@INVOICE_DATE DATE
+
+BEGIN
+	SET @ID_CLIENT = (SELECT TOP 1 id_client FROM client ORDER BY NEWID())
+	SET @ID_SELLER = (SELECT TOP 1 id_seller FROM seller ORDER BY NEWID())
+	SET @ID_METHOD = (SELECT TOP 1 id_method_of_payment FROM method_of_payment ORDER BY NEWID())
+	SET @INVOICE_DATE = (SELECT CONVERT(DATE, CONVERT(VARCHAR(15), '2023-' + 
+				        CONVERT(VARCHAR(5), (CONVERT(INT, RAND() * 12)) + 1) + '-' +
+					    CONVERT(VARCHAR(5), (CONVERT(INT, RAND() * 27)) + 1))))
+
+	INSERT INTO 
+		invoice(id_client, id_method_of_payment, id_seller, date)
+	VALUES (
+		@ID_CLIENT, @ID_METHOD, @ID_SELLER, @INVOICE_DATE)
+END
+GO 9000
