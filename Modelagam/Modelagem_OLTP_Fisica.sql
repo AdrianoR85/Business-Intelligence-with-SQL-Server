@@ -66,6 +66,7 @@ CREATE TABLE invoice_item (
 CREATE TABLE invoice (
 	number INT PRIMARY KEY IDENTITY(1000, 1),
 	date DATE NOT NULL,
+	total_value_invoice NUMERIC(10.2),
 	id_method_of_payment INT,
 	id_client INT,
 	id_seller INT
