@@ -115,7 +115,7 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    	SET @INVOICE_DATE = (SELECT
                            CONVERT(DATE, CONVERT(VARCHAR(15), '2022-' + 
                            CONVERT(VARCHAR(5), (CONVERT(INT, RAND() * 12)) + 1) + '-' +
-   					         CONVERT(VARCHAR(5), (CONVERT(INT, RAND() * 27)) + 1))))
+                           CONVERT(VARCHAR(5), (CONVERT(INT, RAND() * 27)) + 1))))
 
    	INSERT INTO 
    		invoice(id_client, id_method_of_payment, id_seller, date)
