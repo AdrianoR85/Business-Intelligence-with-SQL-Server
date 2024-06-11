@@ -2,7 +2,7 @@ USE oltp_commerce
 
 CREATE VIEW v_report_invoice AS
 SELECT
-	c.first_name, c.last_name, c.gender, i.date, i.number, p.name, i.total
+	c.first_name, c.last_name, c.gender, i.date, i.number, p.name, i.total_value_invoice
 FROM client c
 INNER JOIN invoice i
 ON c.id_client = i.id_client

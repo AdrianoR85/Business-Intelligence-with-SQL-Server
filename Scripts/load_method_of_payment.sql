@@ -28,3 +28,5 @@ INSERT INTO method_of_payment VALUES('Pay Pall - 5 vezes')
 INSERT INTO method_of_payment VALUES('Pay Pall - 12 vezes')
 INSERT INTO method_of_payment VALUES('Pagamento Seguro Web - Vista')
 GO
+
+SELECT * FROM method_of_payment

@@ -7,7 +7,7 @@ SELECT
 	i.date,
 	i.number,
 	p.name,
-	i.total
+	i.total_value_invoice
 FROM 
 	client c
 INNER JOIN invoice i
