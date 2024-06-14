@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WIN-7JJOOGVEEVV.oltp_commerce"
+  DTS:DTSID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WIN-7JJOOGVEEVV;Initial Catalog=oltp_commerce;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}WIN-7JJOOGVEEVV.oltp_commerce;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

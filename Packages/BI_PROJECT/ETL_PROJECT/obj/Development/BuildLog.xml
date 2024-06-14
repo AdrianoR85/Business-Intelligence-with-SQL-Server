@@ -2,13 +2,48 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>ETL_PROJECT</Name>
-    <LastWriteTime>2024-06-12T18:39:24.7518132Z</LastWriteTime>
+    <LastWriteTime>2024-06-14T16:06:32.439386Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>CLIENT_LOAD.dtsx</Name>
-      <LastWriteTime>2024-06-12T19:00:34.9793862Z</LastWriteTime>
+      <LastWriteTime>2024-06-13T17:15:12.203135Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>SELLER_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-13T17:12:19.6179482Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>CATEGORY_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-13T17:31:51.9843039Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>PRODUCT_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-13T18:17:27.7507346Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>SUPPLIER_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-13T19:02:31.900375Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>METHOD_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-13T19:17:20.4496519Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>INVOICE_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-14T16:06:32.4103606Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FACT_LOAD.dtsx</Name>
+      <LastWriteTime>2024-06-14T16:10:13.5221981Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

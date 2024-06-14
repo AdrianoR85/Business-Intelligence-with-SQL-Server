@@ -11,58 +11,20 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{0669B770-8ED3-4741-948C-E6C9A8BB0982}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{6E0F56F2-FD8E-4988-9CDA-50D619C372D1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:ConnectionManagers>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.bi_error]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{704D3234-33C3-4A64-A6B5-21A64CCB2A9D}"
-      DTS:ObjectName="WIN-7JJOOGVEEVV.bi_error">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WIN-7JJOOGVEEVV;Initial Catalog=bi_error;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{704D3234-33C3-4A64-A6B5-21A64CCB2A9D}WIN-7JJOOGVEEVV.bi_error;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}"
-      DTS:ObjectName="WIN-7JJOOGVEEVV.oltp_commerce">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WIN-7JJOOGVEEVV;Initial Catalog=oltp_commerce;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}WIN-7JJOOGVEEVV.oltp_commerce;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}"
-      DTS:ObjectName="WIN-7JJOOGVEEVV.stage_commerce">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WIN-7JJOOGVEEVV;Initial Catalog=stage_commerce;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package-{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}WIN-7JJOOGVEEVV.stage_commerce;Auto Translate=False;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Data Flow Task"
+      DTS:refId="Package\STAGE CLIENT"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{42A09228-B4D0-4B00-BBD1-950D10F8CA3A}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Data Flow Task"
+      DTS:ObjectName="STAGE CLIENT"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -70,7 +32,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Data Flow Task\CLIENT"
+              refId="Package\STAGE CLIENT\CLIENT"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -119,169 +81,169 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\CLIENT.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
+                  refId="Package\STAGE CLIENT\CLIENT.Connections[OleDbConnection]"
+                  connectionManagerID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output]"
+                  refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[id_client]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[id_client]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]"
                       name="id_client"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
                       length="30"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]"
                       name="first_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
                       length="30"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]"
                       name="last_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[email]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[email]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[email]"
                       length="60"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[email]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[email]"
                       name="email"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[gender]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[gender]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[gender]"
                       length="1"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[gender]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[gender]"
                       name="gender"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[birthday]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]"
+                      externalMetadataColumnId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[birthday]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]"
                       name="birthday"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[id_client]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[id_client]"
                       dataType="i4"
                       name="id_client" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="first_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="last_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[email]"
                       codePage="1252"
                       dataType="str"
                       length="60"
                       name="email" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[gender]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="gender" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[birthday]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].ExternalColumns[birthday]"
                       dataType="dbDate"
                       name="birthday" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output]"
+                  refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[id_client]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[id_client]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[id_client]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[id_client]"
                       name="id_client" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[first_name]"
                       name="first_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[last_name]"
                       name="last_name" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[email]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[email]"
                       codePage="1252"
                       dataType="str"
                       length="60"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[email]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[email]"
                       name="email" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[gender]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[gender]"
                       name="gender" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[birthday]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[birthday]"
                       dataType="dbDate"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[birthday]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[birthday]"
                       name="birthday" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -290,7 +252,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\Data Conversion"
+              refId="Package\STAGE CLIENT\Data Conversion"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
@@ -298,40 +260,40 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+                  refId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[full name]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input].Columns[full name]"
                       cachedDataType="wstr"
                       cachedLength="61"
                       cachedName="full name"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]" />
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input].Columns[word gender]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input].Columns[word gender]"
                       cachedDataType="wstr"
                       cachedLength="6"
                       cachedName="word gender"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]" />
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]"
+                  refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="61"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]"
                       name="string full name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -339,7 +301,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]}</property>
+                          name="SourceInputColumnLineageID">#{Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -347,13 +309,13 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       length="6"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]"
                       name="string word gender"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -361,7 +323,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]}</property>
+                          name="SourceInputColumnLineageID">#{Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indicates whether the column uses the faster, locale-neutral parsing routines."
@@ -372,22 +334,22 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output]"
+                  refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -396,7 +358,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\MKT REQUIREMENT"
+              refId="Package\STAGE CLIENT\MKT REQUIREMENT"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -404,50 +366,50 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input]"
+                  refId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[first_name]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="first_name"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]" />
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[last_name]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="last_name"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[gender]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input].Columns[gender]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="gender"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[gender]" />
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[gender]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output]"
+                  refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="61"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]"
                       name="full name"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -455,7 +417,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">#{Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]} + " " + #{Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]}</property>
+                          name="Expression">#{Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]} + " " + #{Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -465,12 +427,12 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]"
                       dataType="wstr"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       length="6"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]"
                       name="word gender"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -478,7 +440,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">([FINDSTRING](#{Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[gender]},"M",1) != 0) ? "Male" : "Female"</property>
+                          name="Expression">([FINDSTRING](#{Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[gender]},"M",1) != 0) ? "Male" : "Female"</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -491,23 +453,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Error Output]"
+                  refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -516,7 +478,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\OLE DB Destination"
+              refId="Package\STAGE CLIENT\OLE DB Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -573,141 +535,141 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-7JJOOGVEEVV.bi_error]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.bi_error]"
+                  refId="Package\STAGE CLIENT\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{704D3234-33C3-4A64-A6B5-21A64CCB2A9D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.bi_error]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_client]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_client]"
                       cachedDataType="i4"
                       cachedName="id_client"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="first_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[first_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="30"
                       cachedName="last_name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[last_name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="60"
                       cachedName="email"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[email]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[email]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="gender"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[gender]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[gender]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birthday]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[birthday]"
                       cachedDataType="dbDate"
                       cachedName="birthday"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[full name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[full name]"
                       cachedDataType="wstr"
                       cachedLength="61"
                       cachedName="full name"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[full name]"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[full name]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[full name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[word gender]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[word gender]"
                       cachedDataType="wstr"
                       cachedLength="6"
                       cachedName="word gender"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[word gender]"
-                      lineageId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[word gender]"
+                      lineageId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output].Columns[word gender]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
                       cachedDataType="i4"
                       cachedName="ErrorCode"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
                       cachedDataType="i4"
                       cachedName="ErrorColumn"
-                      externalMetadataColumnId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
                       dataType="i4"
                       name="id_client" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="first_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
                       codePage="1252"
                       dataType="str"
                       length="30"
                       name="last_name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                       codePage="1252"
                       dataType="str"
                       length="60"
                       name="email" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="gender" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
                       dataType="dbDate"
                       name="birthday" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[full name]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[full name]"
                       dataType="wstr"
                       length="61"
                       name="full name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[word gender]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[word gender]"
                       dataType="wstr"
                       length="6"
                       name="word gender" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
                       dataType="i4"
                       name="ErrorCode" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
                       dataType="i4"
                       name="ErrorColumn" />
                   </externalMetadataColumns>
@@ -715,22 +677,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\STAGE CLIENT\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -739,7 +701,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\SEARCH ADDRESS"
+              refId="Package\STAGE CLIENT\SEARCH ADDRESS"
               componentClassID="Microsoft.Lookup"
               contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
               description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
@@ -795,7 +757,7 @@ where [refTable].[id_client] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]};</property>
+                  name="ParameterMap">#{Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -807,22 +769,22 @@ where [refTable].[id_client] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\SEARCH ADDRESS.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
+                  refId="Package\STAGE CLIENT\SEARCH ADDRESS.Connections[OleDbConnection]"
+                  connectionManagerID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input]"
+                  refId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input]"
                   name="Lookup Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input].Columns[id_client]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input].Columns[id_client]"
                       cachedDataType="i4"
                       cachedName="id_client"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]">
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -840,20 +802,20 @@ where [refTable].[id_client] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output]"
+                  refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
                   errorRowDisposition="RedirectRow"
                   exclusionGroup="1"
                   name="Lookup Match Output"
-                  synchronousInputId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="20"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]"
                       name="region"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -864,12 +826,12 @@ where [refTable].[id_client] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="20"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]"
                       name="state"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -880,12 +842,12 @@ where [refTable].[id_client] = ?</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Copy Column"
                       length="50"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]"
                       name="city"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -899,30 +861,30 @@ where [refTable].[id_client] = ?</property>
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup No Match Output]"
+                  refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup No Match Output]"
                   description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
                   exclusionGroup="1"
                   name="Lookup No Match Output"
-                  synchronousInputId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output]"
+                  refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Lookup Error Output"
-                  synchronousInputId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input]">
+                  synchronousInputId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -931,7 +893,7 @@ where [refTable].[id_client] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Data Flow Task\ST_CLIENT"
+              refId="Package\STAGE CLIENT\ST_CLIENT"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
@@ -988,123 +950,123 @@ where [refTable].[id_client] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Data Flow Task\ST_CLIENT.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
-                  connectionManagerRefId="Package.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
+                  refId="Package\STAGE CLIENT\ST_CLIENT.Connections[OleDbConnection]"
+                  connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
               <inputs>
                 <input
-                  refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input]"
+                  refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[id_client]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[id_client]"
                       cachedDataType="i4"
                       cachedName="id_client"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[id_client]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[email]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[email]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="60"
                       cachedName="email"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[email]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[email]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[email]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[birthday]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[birthday]"
                       cachedDataType="dbDate"
                       cachedName="birthday"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
-                      lineageId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
+                      lineageId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output].Columns[birthday]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[region]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[region]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="region"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[region]"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[region]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[state]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[state]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="20"
                       cachedName="state"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[state]"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[state]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[city]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[city]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="city"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[city]"
-                      lineageId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      lineageId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output].Columns[city]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[string full name]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[string full name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="61"
                       cachedName="string full name"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string full name]" />
                     <inputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[string word gender]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].Columns[string word gender]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="6"
                       cachedName="string word gender"
-                      externalMetadataColumnId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
-                      lineageId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]" />
+                      externalMetadataColumnId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output].Columns[string word gender]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[id_client]"
                       dataType="i4"
                       name="id_client" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="name" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="gender" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[birthday]"
                       dataType="dbDate"
                       name="birthday" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[city]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[state]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[state]"
                       codePage="1252"
                       dataType="str"
                       length="10"
                       name="state" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[region]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[region]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="region" />
                     <externalMetadataColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input].ExternalColumns[email]"
                       codePage="1252"
                       dataType="str"
                       length="100"
@@ -1114,22 +1076,22 @@ where [refTable].[id_client] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Data Flow Task\ST_CLIENT.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\STAGE CLIENT\ST_CLIENT.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\STAGE CLIENT\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Data Flow Task\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\STAGE CLIENT\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Data Flow Task\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\STAGE CLIENT\ST_CLIENT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1140,30 +1102,30 @@ where [refTable].[id_client] = ?</property>
           </components>
           <paths>
             <path
-              refId="Package\Data Flow Task.Paths[Data Conversion Output]"
-              endId="Package\Data Flow Task\ST_CLIENT.Inputs[OLE DB Destination Input]"
+              refId="Package\STAGE CLIENT.Paths[Data Conversion Output]"
+              endId="Package\STAGE CLIENT\ST_CLIENT.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
-              startId="Package\Data Flow Task\Data Conversion.Outputs[Data Conversion Output]" />
+              startId="Package\STAGE CLIENT\Data Conversion.Outputs[Data Conversion Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Derived Column Output]"
-              endId="Package\Data Flow Task\SEARCH ADDRESS.Inputs[Lookup Input]"
+              refId="Package\STAGE CLIENT.Paths[Derived Column Output]"
+              endId="Package\STAGE CLIENT\SEARCH ADDRESS.Inputs[Lookup Input]"
               name="Derived Column Output"
-              startId="Package\Data Flow Task\MKT REQUIREMENT.Outputs[Derived Column Output]" />
+              startId="Package\STAGE CLIENT\MKT REQUIREMENT.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Error Output]"
-              endId="Package\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              refId="Package\STAGE CLIENT.Paths[Lookup Error Output]"
+              endId="Package\STAGE CLIENT\OLE DB Destination.Inputs[OLE DB Destination Input]"
               name="Lookup Error Output"
-              startId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Error Output]" />
+              startId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Error Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[Lookup Match Output]"
-              endId="Package\Data Flow Task\Data Conversion.Inputs[Data Conversion Input]"
+              refId="Package\STAGE CLIENT.Paths[Lookup Match Output]"
+              endId="Package\STAGE CLIENT\Data Conversion.Inputs[Data Conversion Input]"
               name="Lookup Match Output"
-              startId="Package\Data Flow Task\SEARCH ADDRESS.Outputs[Lookup Match Output]" />
+              startId="Package\STAGE CLIENT\SEARCH ADDRESS.Outputs[Lookup Match Output]" />
             <path
-              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
-              endId="Package\Data Flow Task\MKT REQUIREMENT.Inputs[Derived Column Input]"
+              refId="Package\STAGE CLIENT.Paths[OLE DB Source Output]"
+              endId="Package\STAGE CLIENT\MKT REQUIREMENT.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Data Flow Task\CLIENT.Outputs[OLE DB Source Output]" />
+              startId="Package\STAGE CLIENT\CLIENT.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1194,7 +1156,7 @@ where [refTable].[id_client] = ?</property>
       DTS:From="Package\TRUNCATE ST_STAGE"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Data Flow Task" />
+      DTS:To="Package\STAGE CLIENT" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -1209,27 +1171,27 @@ where [refTable].[id_client] = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="149,42"
+          Id="Package\STAGE CLIENT"
+          TopLeft="141,245" />
+        <NodeLayout
           Size="184,42"
           Id="Package\TRUNCATE ST_STAGE"
-          TopLeft="69,43" />
-        <NodeLayout
-          Size="151,42"
-          Id="Package\Data Flow Task"
-          TopLeft="353,48" />
+          TopLeft="130,122" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="253,66.5">
+          TopLeft="218.75,164">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100,0"
+              EndConnector="0,81"
               Start="0,0"
-              End="92.5,0">
+              End="0,73.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="92.5,0" />
+                    End="0,73.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1242,20 +1204,36 @@ where [refTable].[id_client] = ?</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Data Flow Task">
+    design-time-name="Package\STAGE CLIENT">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114,42"
-          Id="Package\Data Flow Task\CLIENT"
-          TopLeft="83,157" />
+          Size="166,42"
+          Id="Package\STAGE CLIENT\SEARCH ADDRESS"
+          TopLeft="516,163" />
         <NodeLayout
           Size="174,42"
-          Id="Package\Data Flow Task\MKT REQUIREMENT"
+          Id="Package\STAGE CLIENT\MKT REQUIREMENT"
           TopLeft="261,160" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\STAGE CLIENT\OLE DB Destination"
+          TopLeft="517,42" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\STAGE CLIENT\ST_CLIENT"
+          TopLeft="235,291" />
+        <NodeLayout
+          Size="114,42"
+          Id="Package\STAGE CLIENT\CLIENT"
+          TopLeft="83,157" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\STAGE CLIENT\Data Conversion"
+          TopLeft="519,297" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          Id="Package\STAGE CLIENT.Paths[OLE DB Source Output]"
           TopLeft="197,179.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1276,38 +1254,8 @@ where [refTable].[id_client] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Data Flow Task\SEARCH ADDRESS"
-          TopLeft="516,163" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Derived Column Output]"
-          TopLeft="435,182.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="81,0"
-              Start="0,0"
-              End="73.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="73.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Data Conversion"
-          TopLeft="519,297" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Match Output]"
+          Id="Package\STAGE CLIENT.Paths[Lookup Match Output]"
           TopLeft="598,205">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1330,12 +1278,8 @@ where [refTable].[id_client] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="171,42"
-          Id="Package\Data Flow Task\OLE DB Destination"
-          TopLeft="517,42" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Lookup Error Output]"
+          Id="Package\STAGE CLIENT.Paths[Lookup Error Output]"
           TopLeft="600.75,163">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1358,12 +1302,30 @@ where [refTable].[id_client] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="132,42"
-          Id="Package\Data Flow Task\ST_CLIENT"
-          TopLeft="235,291" />
         <EdgeLayout
-          Id="Package\Data Flow Task.Paths[Data Conversion Output]"
+          Id="Package\STAGE CLIENT.Paths[Derived Column Output]"
+          TopLeft="435,182.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="81,0"
+              Start="0,0"
+              End="73.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="73.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\STAGE CLIENT.Paths[Data Conversion Output]"
           TopLeft="519,315">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1388,25 +1350,12 @@ where [refTable].[id_client] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\CLIENT">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\SEARCH ADDRESS">
+    design-time-name="Package\STAGE CLIENT\SEARCH ADDRESS">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1416,7 +1365,7 @@ where [refTable].[id_client] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1424,7 +1373,7 @@ where [refTable].[id_client] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\OLE DB Destination">
+    design-time-name="Package\STAGE CLIENT\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1437,7 +1386,20 @@ where [refTable].[id_client] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\ST_CLIENT">
+    design-time-name="Package\STAGE CLIENT\ST_CLIENT">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\STAGE CLIENT\CLIENT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
