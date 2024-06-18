@@ -124,3 +124,23 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    END
    GO 9000
    ```
+
+4. Stage Area
+   - [x] Logical Modeling
+   <img src="Images/02-STAGE_Picture.PNG">
+   
+   - [x] Fisical Modeling [Links](https://github.com/AdrianoR85/Business-Intelligence-with-SQL-Server/blob/main/Modelagam/02-STAGE_Fisico.sql)
+   
+   - [x] Load - OLTP to Stage 
+   <img src="Images/Carga Produto.PNG">
+   <img src="Images/Data flow da carga produto.PNG">
+
+5. OLAP
+   - [x] Logical Modeling [Link](Modelagam/03-DW_Fisico.sql)
+   - [x] Fisical Modeling
+   - [x] Load
+   - [x] Create Data Source
+   - [x] Create Dimensions
+   - [x] Create Cube
+   <img src="Images/Projeto OLAP.PNG">
+		
