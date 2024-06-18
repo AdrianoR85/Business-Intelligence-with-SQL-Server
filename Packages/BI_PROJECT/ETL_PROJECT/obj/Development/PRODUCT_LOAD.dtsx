@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{9CB236D4-CF2B-4B84-900E-69307F5B91A4}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{CC5F2F15-1E7E-4F7D-8E02-EC79E8466776}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -47,17 +47,1142 @@
       </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\POPULA AREA STAGE"
+      DTS:refId="Package\DW PRODUCT LOAD"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{5954F9D8-976F-4784-9CA9-5852E6A392BD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DW PRODUCT LOAD">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DW PRODUCT LOAD\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{D291A8F2-BC30-47C8-9C72-346B29D95003}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                          dataType="dbDate"
+                          description="end"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]"
+                          name="end"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column 1"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[start]"
+                          dataType="dbDate"
+                          description="start"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[start]"
+                          name="start"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_DBDATE)(@[System::StartTime])</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_DBDATE)(@[System::StartTime])</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[dim_product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B61AF5CA-CD41-4A3E-AFE3-07A800FD65D5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.dw_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[id_product]"
+                          cachedDataType="i4"
+                          cachedName="id_product"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_product]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[idcategory]"
+                          cachedDataType="i4"
+                          cachedName="idcategory"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_category]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[idcategory]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[start]"
+                          cachedDataType="dbDate"
+                          cachedName="start"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Output].Columns[start]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="name"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[name]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[unit_price]"
+                          cachedDataType="numeric"
+                          cachedName="unit_price"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[unit_price]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].Columns[avg_cost]"
+                          cachedDataType="numeric"
+                          cachedName="avg_cost"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[avg_cost]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_sk]"
+                          dataType="i4"
+                          name="id_sk" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
+                          dataType="i4"
+                          name="id_product" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_category]"
+                          dataType="i4"
+                          name="id_category" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[start]"
+                          dataType="dbDate"
+                          name="start" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[end]"
+                          dataType="dbDate"
+                          name="end" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                          dataType="numeric"
+                          name="unit_price"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
+                          dataType="numeric"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [dbo].[dim_product] SET [end] = ? WHERE [id_product] = ? AND [end] IS NULL</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{B61AF5CA-CD41-4A3E-AFE3-07A800FD65D5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.dw_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[id_product]"
+                          cachedDataType="i4"
+                          cachedName="id_product"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]" />
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[end]"
+                          cachedDataType="dbDate"
+                          cachedName="end"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Output].Columns[end]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="dbDate"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[st_product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]"
+                          name="id_product"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          length="50"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]"
+                          name="name"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]"
+                          name="unit_price"
+                          precision="10"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[idcategory]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idcategory]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[idcategory]"
+                          name="idcategory"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
+                          dataType="i4"
+                          name="id_product" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[unit_price]"
+                          dataType="numeric"
+                          name="unit_price"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
+                          dataType="numeric"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[idcategory]"
+                          dataType="i4"
+                          name="idcategory" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_product]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[id_product]"
+                          name="id_product" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[name]"
+                          name="name" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                          dataType="numeric"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[unit_price]"
+                          name="unit_price"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
+                          dataType="numeric"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idcategory]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[idcategory]"
+                          name="idcategory" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension"
+                  componentClassID="Microsoft.SCD"
+                  contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+                  description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+                  name="Slowly Changing Dimension"
+                  version="3">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SELECT statement used to create a schema rowset."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [avg_cost], [id_product], [name], [unit_price],[start],[end] FROM [dbo].[dim_product]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                      name="CurrentRowWhere">[start] IS NOT NULL AND [end] IS NULL</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                      name="UpdateChangingAttributeHistory">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                      name="FailOnFixedAttributeChange">true</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the column name for the inferred member."
+                      name="InferredMemberIndicator"></property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether inferred member updates are detected."
+                      name="EnableInferredMember">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                      name="FailOnLookupFailure">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies that all rows in the input are new or the transformation detects the change type."
+                      name="IncomingRowChangeType"
+                      typeConverter="IncomingRowChangeType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Connections[LookupConnection]"
+                      connectionManagerID="{B61AF5CA-CD41-4A3E-AFE3-07A800FD65D5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.dw_commerce]"
+                      description="Defines the connection to use for lookups in the dimension table"
+                      name="LookupConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                      name="Slowly Changing Dimension Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[avg_cost]"
+                          cachedDataType="numeric"
+                          cachedName="avg_cost"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[avg_cost]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[id_product]"
+                          cachedDataType="i4"
+                          cachedName="id_product"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[id_product]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">1</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="name"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[name]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[unit_price]"
+                          cachedDataType="numeric"
+                          cachedName="unit_price"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[unit_price]"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              name="ColumnType"
+                              typeConverter="ColumnType">3</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[avg_cost]"
+                          dataType="numeric"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[id_product]"
+                          dataType="i4"
+                          name="id_product" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="name" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[unit_price]"
+                          dataType="numeric"
+                          name="unit_price"
+                          precision="10"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[start]"
+                          dataType="dbDate"
+                          name="start" />
+                        <externalMetadataColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[end]"
+                          dataType="dbDate"
+                          name="end" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                      description="Unchanged rows"
+                      exclusionGroup="1"
+                      name="Unchanged Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]"
+                      description="New rows"
+                      exclusionGroup="1"
+                      name="New Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                      description="Rows with changes in columns tagged FixedAttribute"
+                      exclusionGroup="1"
+                      name="Fixed Attribute Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                      description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                      exclusionGroup="1"
+                      name="Changing Attribute Updates Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                      description="HistoricalAttribute (Type 2) changes result in these new rows"
+                      exclusionGroup="2"
+                      name="Historical Attribute Inserts Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                      description="Information to update unpopulated initial dimension row"
+                      exclusionGroup="1"
+                      name="Inferred Member Updates Output"
+                      synchronousInputId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All"
+                  componentClassID="Microsoft.UnionAll"
+                  contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+                  name="Union All"
+                  version="1">
+                  <inputs>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                      name="Union All Input 1">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[id_product]"
+                          cachedDataType="i4"
+                          cachedName="id_product"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_product]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="name"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[unit_price]"
+                          cachedDataType="numeric"
+                          cachedName="unit_price"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[unit_price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[avg_cost]"
+                          cachedDataType="numeric"
+                          cachedName="avg_cost"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[avg_cost]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1].Columns[idcategory]"
+                          cachedDataType="i4"
+                          cachedName="idcategory"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[idcategory]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[idcategory]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                      hasSideEffects="true"
+                      name="Union All Input 2">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[id_product]"
+                          cachedDataType="i4"
+                          cachedName="id_product"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_product]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="name"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[name]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[name]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[unit_price]"
+                          cachedDataType="numeric"
+                          cachedName="unit_price"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[unit_price]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[avg_cost]"
+                          cachedDataType="numeric"
+                          cachedName="avg_cost"
+                          cachedPrecision="10"
+                          cachedScale="2"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[avg_cost]}</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2].Columns[idcategory]"
+                          cachedDataType="i4"
+                          cachedName="idcategory"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[idcategory]">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Output column lineage ID"
+                              name="OutputColumnLineageID">#{Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[idcategory]}</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                    <input
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 3]"
+                      dangling="true"
+                      hasSideEffects="true"
+                      name="Union All Input 3">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1]"
+                      name="Union All Output 1">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_product]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[id_product]"
+                          name="id_product" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[name]"
+                          name="name" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[unit_price]"
+                          dataType="numeric"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[unit_price]"
+                          name="unit_price"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[avg_cost]"
+                          dataType="numeric"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[avg_cost]"
+                          name="avg_cost"
+                          precision="10"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[idcategory]"
+                          dataType="i4"
+                          lineageId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1].Columns[idcategory]"
+                          name="idcategory" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Derived Column Output]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Derived Column Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Derived Column Output1]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Historical Attribute Inserts Output]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column.Inputs[Derived Column Input]"
+                  name="Historical Attribute Inserts Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[New Output]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 1]"
+                  name="New Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Outputs[New Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[OLE DB Command Output]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Inputs[Union All Input 2]"
+                  name="OLE DB Command Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Union All Output 1]"
+                  endId="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1.Inputs[Derived Column Input]"
+                  name="Union All Output 1"
+                  startId="Package\DW PRODUCT LOAD\Data Flow Task\Union All.Outputs[Union All Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STAGE PRODUCT LOAD"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
       DTS:DTSID="{66E2787B-DB3C-4F1A-8639-04CA764E546C}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="POPULA AREA STAGE">
+      DTS:ObjectName="STAGE PRODUCT LOAD">
       <DTS:Variables />
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\POPULA AREA STAGE\STAGE PRODUCT"
+          DTS:refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{B257688D-E1B8-4112-8C92-022F25F8FF84}"
@@ -71,7 +1196,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT"
+                  refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT"
                   componentClassID="Microsoft.OLEDBSource"
                   contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
                   description="OLE DB Source"
@@ -121,7 +1246,7 @@ FROM            product</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Connections[OleDbConnection]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Connections[OleDbConnection]"
                       connectionManagerID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}:external"
                       connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
                       description="The OLE DB runtime connection used to access the database."
@@ -129,134 +1254,134 @@ FROM            product</property>
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output]"
                       name="OLE DB Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]"
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]"
                           name="id_product"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]"
                           codePage="1252"
                           dataType="str"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[name]"
                           length="100"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]"
                           name="name"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[price]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]"
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]"
                           name="price"
                           precision="10"
                           scale="2"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]"
                           dataType="numeric"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]"
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]"
                           name="avg_cost"
                           precision="18"
                           truncationRowDisposition="FailComponent" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]"
                           dataType="i4"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_category]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]"
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_category]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]"
                           name="id_category"
                           truncationRowDisposition="FailComponent" />
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_product]"
                           dataType="i4"
                           name="id_product" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[name]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[name]"
                           codePage="1252"
                           dataType="str"
                           length="100"
                           name="name" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[price]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[price]"
                           dataType="numeric"
                           name="price"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[avg_cost]"
                           dataType="numeric"
                           name="avg_cost"
                           precision="18" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_category]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].ExternalColumns[id_category]"
                           dataType="i4"
                           name="id_category" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output]"
                       isErrorOut="true"
                       name="OLE DB Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_product]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_product]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_product]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_product]"
                           name="id_product" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[name]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[name]"
                           codePage="1252"
                           dataType="str"
                           length="100"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[name]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[name]"
                           name="name" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[price]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[price]"
                           dataType="numeric"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[price]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[price]"
                           name="price"
                           precision="10"
                           scale="2" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
                           dataType="numeric"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[avg_cost]"
                           name="avg_cost"
                           precision="18" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_category]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_category]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_category]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[id_category]"
                           name="id_category" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -265,7 +1390,7 @@ FROM            product</property>
                   </outputs>
                 </component>
                 <component
-                  refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT"
+                  refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -322,7 +1447,7 @@ FROM            product</property>
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Connections[OleDbConnection]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Connections[OleDbConnection]"
                       connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
                       connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
                       description="The OLE DB runtime connection used to access the database."
@@ -330,97 +1455,97 @@ FROM            product</property>
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[id_product]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[id_product]"
                           cachedDataType="i4"
                           cachedName="id_product"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]" />
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_product]" />
                         <inputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[name]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[name]"
                           cachedCodepage="1252"
                           cachedDataType="str"
                           cachedLength="100"
                           cachedName="name"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]" />
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[name]" />
                         <inputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[avg_cost]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[avg_cost]"
                           cachedDataType="numeric"
                           cachedName="avg_cost"
                           cachedPrecision="18"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]" />
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[avg_cost]" />
                         <inputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[price]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[price]"
                           cachedDataType="numeric"
                           cachedName="price"
                           cachedPrecision="10"
                           cachedScale="2"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]" />
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[price]" />
                         <inputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[id_category]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].Columns[id_category]"
                           cachedDataType="i4"
                           cachedName="id_category"
-                          externalMetadataColumnId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[idcategoty]"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]" />
+                          externalMetadataColumnId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[idcategory]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output].Columns[id_category]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[id_product]"
                           dataType="i4"
                           name="id_product" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[name]"
                           codePage="1252"
                           dataType="str"
                           length="50"
                           name="name" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[unit_price]"
                           dataType="numeric"
                           name="unit_price"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[avg_cost]"
                           dataType="numeric"
                           name="avg_cost"
                           precision="10"
                           scale="2" />
                         <externalMetadataColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[idcategoty]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input].ExternalColumns[idcategory]"
                           dataType="i4"
-                          name="idcategoty" />
+                          name="idcategory" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -431,16 +1556,16 @@ FROM            product</property>
               </components>
               <paths>
                 <path
-                  refId="Package\POPULA AREA STAGE\STAGE PRODUCT.Paths[OLE DB Source Output]"
-                  endId="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]"
+                  refId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT.Paths[OLE DB Source Output]"
+                  endId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT.Inputs[OLE DB Destination Input]"
                   name="OLE DB Source Output"
-                  startId="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output]" />
+                  startId="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT.Outputs[OLE DB Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\POPULA AREA STAGE\TRUNCATE ST_PRODUCT"
+          DTS:refId="Package\STAGE PRODUCT LOAD\TRUNCATE ST_PRODUCT"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
           DTS:DTSID="{E3422E50-5E9B-4848-A419-1F65CF5BF372}"
@@ -459,13 +1584,13 @@ FROM            product</property>
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\POPULA AREA STAGE.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\STAGE PRODUCT LOAD.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{98320BE6-8212-4758-9A51-49E57C9AF4BC}"
-          DTS:From="Package\POPULA AREA STAGE\TRUNCATE ST_PRODUCT"
+          DTS:From="Package\STAGE PRODUCT LOAD\TRUNCATE ST_PRODUCT"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\POPULA AREA STAGE\STAGE PRODUCT" />
+          DTS:To="Package\STAGE PRODUCT LOAD\STAGE PRODUCT" />
       </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
@@ -474,10 +1599,18 @@ FROM            product</property>
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
       DTS:DTSID="{DC53ADCD-0297-4245-B633-7D76837B3A57}"
-      DTS:From="Package\POPULA AREA STAGE"
+      DTS:From="Package\STAGE PRODUCT LOAD"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
       DTS:To="Package\CAMEL CASE PRODUCT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{18351C63-4C63-4BAE-BF13-E191A85603BD}"
+      DTS:From="Package\CAMEL CASE PRODUCT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\DW PRODUCT LOAD" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -490,13 +1623,50 @@ FROM            product</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\CAMEL CASE PRODUCT\Execute SQL Task"
+          TopLeft="49,85" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="256,257"
+          Size="256,300"
+          Id="Package\CAMEL CASE PRODUCT"
+          TopLeft="393.5,52.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="289.5,201.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="104,0"
+              Start="0,0"
+              End="96.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="96.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="161,42"
+          Id="Package\STAGE PRODUCT LOAD\STAGE PRODUCT"
+          TopLeft="38.5,152" />
         <NodeLayout
           Size="199,42"
-          Id="Package\POPULA AREA STAGE\TRUNCATE ST_PRODUCT"
+          Id="Package\STAGE PRODUCT LOAD\TRUNCATE ST_PRODUCT"
           TopLeft="13.5,23" />
         <EdgeLayout
-          Id="Package\POPULA AREA STAGE.PrecedenceConstraints[Constraint]"
+          Id="Package\STAGE PRODUCT LOAD.PrecedenceConstraints[Constraint]"
           TopLeft="116,65">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -517,42 +1687,38 @@ FROM            product</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="161,42"
-          Id="Package\POPULA AREA STAGE\STAGE PRODUCT"
-          TopLeft="38.5,152" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
           PanelSize="225,249"
           Size="225,292"
-          Id="Package\POPULA AREA STAGE"
-          TopLeft="80,39" />
+          Id="Package\STAGE PRODUCT LOAD"
+          TopLeft="64.5,54.5" />
         <NodeLayout
-          Size="163,42"
-          Id="Package\CAMEL CASE PRODUCT\Execute SQL Task"
-          TopLeft="49,85" />
+          Size="151,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task"
+          TopLeft="33,19" />
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="256,257"
-          Size="256,300"
-          Id="Package\CAMEL CASE PRODUCT"
-          TopLeft="485,40" />
+          PanelSize="221,111"
+          Size="221,154"
+          Id="Package\DW PRODUCT LOAD"
+          TopLeft="772,129" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="305,187.5">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="649.5,204.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="180,0"
+              EndConnector="122.5,0"
               Start="0,0"
-              End="172.5,0">
+              End="115,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="172.5,0" />
+                    End="115,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -565,20 +1731,20 @@ FROM            product</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\POPULA AREA STAGE\STAGE PRODUCT">
+    design-time-name="Package\STAGE PRODUCT LOAD\STAGE PRODUCT">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="126,42"
-          Id="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT"
-          TopLeft="145,90" />
-        <NodeLayout
           Size="144,42"
-          Id="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT"
+          Id="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT"
           TopLeft="138,236" />
+        <NodeLayout
+          Size="126,42"
+          Id="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT"
+          TopLeft="145,90" />
         <EdgeLayout
-          Id="Package\POPULA AREA STAGE\STAGE PRODUCT.Paths[OLE DB Source Output]"
+          Id="Package\STAGE PRODUCT LOAD\STAGE PRODUCT.Paths[OLE DB Source Output]"
           TopLeft="209,132">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -603,7 +1769,7 @@ FROM            product</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\POPULA AREA STAGE\STAGE PRODUCT\PRODUCT">
+    design-time-name="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\PRODUCT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -611,7 +1777,7 @@ FROM            product</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\POPULA AREA STAGE\STAGE PRODUCT\ST_PRODUCT">
+    design-time-name="Package\STAGE PRODUCT LOAD\STAGE PRODUCT\ST_PRODUCT">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -620,6 +1786,313 @@ FROM            product</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DW PRODUCT LOAD\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source"
+          TopLeft="157.5,5.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension"
+          TopLeft="128,107.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="232.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column"
+          TopLeft="17.5,209.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Historical Attribute Inserts Output]"
+          TopLeft="199,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-104.5,60"
+              Start="0,0"
+              End="-104.5,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-100.5,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-100.5,24.2735042735043"
+                    Point2="-104.5,24.2735042735043"
+                    Point3="-104.5,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-104.5,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-127.30638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Command"
+          TopLeft="5.50000000000003,311.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="91.5,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\Union All"
+          TopLeft="172,413.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[New Output]"
+          TopLeft="266,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-14.6666666666666,264"
+              Start="0,0"
+              End="-14.6666666666666,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,127.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,127.104705383637"
+                    Point2="0,131.104705383637"
+                    Point3="-4,131.104705383637" />
+                  <mssgle:LineSegment
+                    End="-10.6666666666666,131.104705383637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-10.6666666666666,131.104705383637"
+                    Point2="-14.6666666666666,131.104705383637"
+                    Point3="-14.6666666666666,135.104705383637" />
+                  <mssgle:LineSegment
+                    End="-14.6666666666666,256.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-34.4247200520833,136.104705383637,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[OLE DB Command Output]"
+          TopLeft="88.5,353.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.166666666667,60"
+              Start="0,0"
+              End="125.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5301794453507"
+                    Point2="0,35.5301794453507"
+                    Point3="4,35.5301794453507" />
+                  <mssgle:LineSegment
+                    End="121.166666666667,35.5301794453507" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.166666666667,35.5301794453507"
+                    Point2="125.166666666667,35.5301794453507"
+                    Point3="125.166666666667,39.5301794453507" />
+                  <mssgle:LineSegment
+                    End="125.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\Derived Column 1"
+          TopLeft="151,515.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Union All Output 1]"
+          TopLeft="232.5,455.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="163,42"
+          Id="Package\DW PRODUCT LOAD\Data Flow Task\Insert Destination"
+          TopLeft="151,617.5" />
+        <EdgeLayout
+          Id="Package\DW PRODUCT LOAD\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="232.5,557.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DW PRODUCT LOAD\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DW PRODUCT LOAD\Data Flow Task\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{B61AF5CA-CD41-4A3E-AFE3-07A800FD65D5}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[dim_product]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[avg_cost]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;avg_cost&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[idcategory]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_category&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[id_product]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_product&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[name]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;name&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;OLE DB Source.Outputs[OLE DB Source Output].Columns[unit_price]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;unit_price&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;start&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;end&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

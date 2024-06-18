@@ -11,286 +11,562 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="3"
-  DTS:VersionGUID="{98566746-313C-4987-BE91-D58AC532C81F}">
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{3051ADAA-B0A3-40F8-970D-81A5D3F1924B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\STAGE INVOICE"
-      DTS:CreationName="Microsoft.Pipeline"
-      DTS:Description="Data Flow Task"
-      DTS:DTSID="{C3DF3817-F66C-45E9-84EE-E7B8DBB81AAB}"
-      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:refId="Package\DW INVOICE LOAD"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{92152AB1-A2DF-4D5A-9353-6D282BE762D3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="STAGE INVOICE"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      DTS:ObjectName="DW INVOICE LOAD">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\STAGE INVOICE\INVOICE"
-              componentClassID="Microsoft.OLEDBSource"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="INVOICE"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        number
-FROM            invoice</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\STAGE INVOICE\INVOICE.Connections[OleDbConnection]"
-                  connectionManagerID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\DW INVOICE LOAD\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C1CD2F99-C19E-491E-BB22-8616AA97041F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [id_sk]
+      ,[id_invoice]
+  FROM [dw_commerce].[dbo].[dim_invoice]</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{B61AF5CA-CD41-4A3E-AFE3-07A800FD65D5}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.dw_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].ExternalColumns[number]"
-                      lineageId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]"
-                      name="number"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].ExternalColumns[number]"
-                      dataType="i4"
-                      name="number" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[number]"
-                      dataType="i4"
-                      lineageId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[number]"
-                      name="number" />
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\STAGE INVOICE\STAGE INVOICE"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="STAGE INVOICE"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        id_invoice
-FROM            st_invoice</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\STAGE INVOICE\STAGE INVOICE.Connections[OleDbConnection]"
-                  connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].Columns[number]"
-                      cachedDataType="i4"
-                      cachedName="number"
-                      externalMetadataColumnId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
-                      lineageId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
-                      dataType="i4"
-                      name="id_invoice" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
-            <path
-              refId="Package\STAGE INVOICE.Paths[OLE DB Source Output]"
-              endId="Package\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id_invoice]"
+                          cachedDataType="i4"
+                          cachedName="id_invoice"
+                          externalMetadataColumnId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output].Columns[id_invoice]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
+                          dataType="i4"
+                          name="id_invoice" />
+                        <externalMetadataColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id_sk]"
+                          dataType="i4"
+                          name="id_sk" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="STAGE INVOICE"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[st_invoice]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM stage_commerce.dbo.st_invoice
+WHERE id_invoice NOT IN
+(SELECT id_invoice FROM dw_commerce.dbo.dim_invoice)</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Connections[OleDbConnection]"
+                      connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output].Columns[id_invoice]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output].ExternalColumns[id_invoice]"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output].Columns[id_invoice]"
+                          name="id_invoice"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output].ExternalColumns[id_invoice]"
+                          dataType="i4"
+                          name="id_invoice" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[id_invoice]"
+                          dataType="i4"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[id_invoice]"
+                          name="id_invoice" />
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\DW INVOICE LOAD\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\TRUNCATE INVOICE"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F692E46C-774A-4BDB-B880-84351FDBA627}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\STAGE INVOICE LOAD"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{07ECA711-7AF4-4FE6-8C50-53C1A4F6168C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="TRUNCATE INVOICE"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="STAGE INVOICE LOAD">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE st_invoice" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\STAGE INVOICE LOAD\STAGE INVOICE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C3DF3817-F66C-45E9-84EE-E7B8DBB81AAB}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="STAGE INVOICE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="INVOICE"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        number
+FROM            invoice</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Connections[OleDbConnection]"
+                      connectionManagerID="{AD3D9287-C5F3-4FD5-A7C6-1266591EB530}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.oltp_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].ExternalColumns[number]"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]"
+                          name="number"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].ExternalColumns[number]"
+                          dataType="i4"
+                          name="number" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[number]"
+                          dataType="i4"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[number]"
+                          name="number" />
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="STAGE INVOICE"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT        id_invoice
+FROM            st_invoice</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Connections[OleDbConnection]"
+                      connectionManagerID="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[WIN-7JJOOGVEEVV.stage_commerce]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].Columns[number]"
+                          cachedDataType="i4"
+                          cachedName="number"
+                          externalMetadataColumnId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output].Columns[number]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input].ExternalColumns[id_invoice]"
+                          dataType="i4"
+                          name="id_invoice" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\STAGE INVOICE LOAD\STAGE INVOICE.Paths[OLE DB Source Output]"
+                  endId="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\STAGE INVOICE LOAD\TRUNCATE INVOICE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{F692E46C-774A-4BDB-B880-84351FDBA627}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE INVOICE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{4D3492C7-4D8B-4ABD-A03B-47CD45E7C42E}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE st_invoice" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\STAGE INVOICE LOAD.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{70C1BE9C-5608-417B-950B-49E277207336}"
+          DTS:From="Package\STAGE INVOICE LOAD\TRUNCATE INVOICE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\STAGE INVOICE LOAD\STAGE INVOICE" />
+      </DTS:PrecedenceConstraints>
     </DTS:Executable>
   </DTS:Executables>
-  <DTS:PrecedenceConstraints>
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint]"
-      DTS:CreationName=""
-      DTS:DTSID="{70C1BE9C-5608-417B-950B-49E277207336}"
-      DTS:From="Package\TRUNCATE INVOICE"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint"
-      DTS:To="Package\STAGE INVOICE" />
-  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -302,18 +578,14 @@ FROM            st_invoice</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="176,42"
-          Id="Package\TRUNCATE INVOICE"
-          TopLeft="116,103" />
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="155,42"
-          Id="Package\STAGE INVOICE"
-          TopLeft="128,233" />
+          Id="Package\STAGE INVOICE LOAD\STAGE INVOICE"
+          TopLeft="30,146" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="204.75,145">
+          Id="Package\STAGE INVOICE LOAD.PrecedenceConstraints[Constraint]"
+          TopLeft="106.75,58">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -333,24 +605,46 @@ FROM            st_invoice</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="176,42"
+          Id="Package\STAGE INVOICE LOAD\TRUNCATE INVOICE"
+          TopLeft="18,16" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="208,211"
+          Size="208,254"
+          Id="Package\STAGE INVOICE LOAD"
+          TopLeft="73,67" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\DW INVOICE LOAD\Data Flow Task"
+          TopLeft="40,29" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="243,126"
+          Size="243,169"
+          Id="Package\DW INVOICE LOAD"
+          TopLeft="411,110" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\STAGE INVOICE">
+    design-time-name="Package\STAGE INVOICE LOAD\STAGE INVOICE">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="120,42"
-          Id="Package\STAGE INVOICE\INVOICE"
+          Id="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE"
           TopLeft="178,87" />
         <NodeLayout
           Size="155,42"
-          Id="Package\STAGE INVOICE\STAGE INVOICE"
+          Id="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE"
           TopLeft="159,214" />
         <EdgeLayout
-          Id="Package\STAGE INVOICE.Paths[OLE DB Source Output]"
+          Id="Package\STAGE INVOICE LOAD\STAGE INVOICE.Paths[OLE DB Source Output]"
           TopLeft="237.25,129">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -375,7 +669,7 @@ FROM            st_invoice</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGE INVOICE\INVOICE">
+    design-time-name="Package\STAGE INVOICE LOAD\STAGE INVOICE\INVOICE">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -383,7 +677,66 @@ FROM            st_invoice</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\STAGE INVOICE\STAGE INVOICE">
+    design-time-name="Package\STAGE INVOICE LOAD\STAGE INVOICE\STAGE INVOICE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\DW INVOICE LOAD\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="155,42"
+          Id="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE"
+          TopLeft="230,92" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination"
+          TopLeft="226,199" />
+        <EdgeLayout
+          Id="Package\DW INVOICE LOAD\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="309.5,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65"
+              Start="0,0"
+              End="0,57.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DW INVOICE LOAD\Data Flow Task\STAGE INVOICE">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DW INVOICE LOAD\Data Flow Task\OLE DB Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
