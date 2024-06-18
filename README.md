@@ -136,11 +136,19 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    <img src="Images/Data flow da carga produto.PNG">
 
 5. OLAP
+   - [x] Fisical Modeling [Link](Images/03-DW_Picture.PNG)
    - [x] Logical Modeling [Link](Modelagam/03-DW_Fisico.sql)
-   - [x] Fisical Modeling
-   - [x] Load
+   - [x] Load 
    - [x] Create Data Source
    - [x] Create Dimensions
    - [x] Create Cube
    <img src="Images/Projeto OLAP.PNG">
+
+6. Reporting
+   - [x] Configure Report Server
+   - [x] Create Shared DataSource
+   - [x] Create DataSet
+   - [x] Create Reports
+   <img src="Images/Reporting Serves.PNG">
+   <img src="Images/Relatorio vendas.PNG">
 		
