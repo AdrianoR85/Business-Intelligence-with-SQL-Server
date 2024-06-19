@@ -1,4 +1,4 @@
-[![Project Status](https://img.shields.io/badge/project_status-under_development-orange.svg)](https://shields.io)
+![Project Status](https://img.shields.io/badge/status-completed-brightgreen)
 # Business-Intelligence-with-SQL-Server
 
 ## Project Description
@@ -19,6 +19,8 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
 - Windows Server 2022 
 - StarUML
 - VirtualBox
+
+## [Certificate](Images/Certificado_BI_SQL_Server.jpg) 
 
 ## Projects Steps
 1. Environment Setup
@@ -152,3 +154,5 @@ data warehouse, the construction of cubes in Analysis Services, and the generati
    <img src="Images/Reporting Serves.PNG">
    <img src="Images/Relatorio vendas.PNG">
 		
+
+### COMPLETED
