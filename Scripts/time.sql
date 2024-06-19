@@ -44,7 +44,7 @@ BEGIN
 		-- [month]
 		DATEPART(MONTH,@DATA) AS MES, 
 		--[month_names]
-		DATEPART(MONTH,@DATA) AS NOMEMES, 
+		DATENAME(MONTH,@DATA) AS NOMEMES, 
 		--[quarter]
 		DATEPART(qq, @DATA) AS QUARTO,
 		--[quarter_year]
@@ -72,3 +72,5 @@ SET [full_date] = [year] + [month] + [day]
 GO
 
 SELECT * FROM dim_time
+
+--TRUNCATE TABLE dim_time

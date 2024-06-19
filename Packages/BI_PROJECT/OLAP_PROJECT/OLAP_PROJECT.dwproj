@@ -6,10 +6,79 @@
     <Name>OLAP_PROJECT.database</Name>
     <FullPath>OLAP_PROJECT.database</FullPath>
   </Database>
+  <Cubes>
+    <ProjectItem>
+      <Name>SALES_CUBE.cube</Name>
+      <FullPath>SALES_CUBE.cube</FullPath>
+      <Dependencies>
+        <ProjectItem>
+          <Name>SALES_CUBE.partitions</Name>
+          <FullPath>SALES_CUBE.partitions</FullPath>
+        </ProjectItem>
+      </Dependencies>
+    </ProjectItem>
+  </Cubes>
+  <Dimensions>
+    <ProjectItem>
+      <Name>Dim Client.dim</Name>
+      <FullPath>Dim Client.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Supplier.dim</Name>
+      <FullPath>Dim Supplier.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Seller.dim</Name>
+      <FullPath>Dim Seller.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Invoice.dim</Name>
+      <FullPath>Dim Invoice.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Method.dim</Name>
+      <FullPath>Dim Method.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Product.dim</Name>
+      <FullPath>Dim Product.dim</FullPath>
+    </ProjectItem>
+    <ProjectItem>
+      <Name>Dim Time.dim</Name>
+      <FullPath>Dim Time.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
+  <DataSources>
+    <ProjectItem>
+      <Name>DS_DW_Commerce.ds</Name>
+      <FullPath>DS_DW_Commerce.ds</FullPath>
+    </ProjectItem>
+  </DataSources>
+  <DataSourceViews>
+    <ProjectItem>
+      <Name>DSV_DW_Commerce.dsv</Name>
+      <FullPath>DSV_DW_Commerce.dsv</FullPath>
+    </ProjectItem>
+  </DataSourceViews>
   <Configurations>
     <Configuration>
       <Name>Development</Name>
-      <Options />
+      <Options>
+        <ConnectionMappings>
+          <ConfigurationSetting>
+            <Id>DS_DW_Commerce</Id>
+            <Name>DS_DW_Commerce</Name>
+            <Value xsi:type="xsd:string">Provider=SQLNCLI11.1;Data Source=WIN-7JJOOGVEEVV;Integrated Security=SSPI;Initial Catalog=dw_commerce</Value>
+          </ConfigurationSetting>
+        </ConnectionMappings>
+        <ConnectionSecurityMappings>
+          <ConfigurationSetting>
+            <Id>DS_DW_Commerce</Id>
+            <Name>DS_DW_Commerce</Name>
+            <Value xsi:type="xsd:int">0</Value>
+          </ConfigurationSetting>
+        </ConnectionSecurityMappings>
+      </Options>
     </Configuration>
   </Configurations>
 </Project>
